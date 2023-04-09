@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>&lt;sf-nav&gt; Demo</title>
+        <!-- Integration material icons as they are used in sf-nav -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Google fonts integration -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet">
+        <!-- Add all the custom styling in this css file -->
+        <link rel="stylesheet" href="styles.css">
+        <!-- Integration the web components module -->
+        <!-- Integration lit and sf-nav web components module -->
+        <script type="module">
+            import {LitElement, html, css} from 'https://unpkg.com/lit-element/lit-element.js?module';
+            import {SfISelect} from 'https://unpkg.com/sf-i-select@latest/sf-i-select.js?module';
+            import {SfISubSelect} from 'https://unpkg.com/sf-i-sub-select@latest/sf-i-sub-select.js?module';
+            import {SfIForm} from 'https://unpkg.com/sf-i-form/sf-i-form.js?module';
+        </script>
+    </head>
+
+    <body>
+
+        <br /><br />
+        <div class="logo-container">
+            <a href="index.html" class="link">Back</a>
+        </div>
+        <div class="logo-container">
+            <div class="grow">
+                <sf-i-form 
+                    name="MOD_NAME"
+                    apiId="MOD_API_ID"
+                    dependencies="[{&quot;parent&quot;: &quot;sf-i-countries&quot;, &quot;child&quot;: &quot;sf-i-states&quot;}]"
+                    inputsIds="[&quot;sf-i-countries&quot;, &quot;sf-i-states&quot;, &quot;name&quot;]"
+                    fields="MOD_FIELDS"
+                    mode="view"
+                    >
+                    <div slot="form">
+                        <label>Name</label><br />
+                        <input id="name" type="text" />
+                        <br />
+                        <sf-i-select id="sf-i-countries" apiId="zu3kh9cq2c" name="Countries" label="Select Country">
+                        </sf-i-select>
+                        <br />
+                        <sf-i-sub-select id="sf-i-states" apiId="clnu4kk1ah" name="States" label="Select States">
+                        </sf-i-sub-select>
+                    </div>
+
+                </sf-i-form>
+            </div>
+        </div>
+
+        
+
+    </body>
+  
+</html>
